@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://joinix-qo3b.onrender.com", credentials: true }));
 app.use(cookieParser());
 
 const server = http.createServer(app);
@@ -29,7 +29,7 @@ app.get("/", (req : Request, res : Response) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://joinix-qo3b.onrender.com",
     methods: ["GET", "POST"],
     credentials: true
   }
