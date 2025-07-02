@@ -1,7 +1,7 @@
 import {Room} from "../model/room.model";
 import { generateRoomId } from "../utils/generateRoomId";
 
-const FRONTEND_BASE_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
+const FRONTEND_BASE_URL = process.env.FRONTEND_URL || 'https://joinix-vecg.onrender.com/';
 
 
 export const createRoom = async (hostUserId: string) => {
