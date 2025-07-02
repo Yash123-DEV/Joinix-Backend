@@ -77,6 +77,15 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("🔴 Client disconnected:", socket.id);
   });
+
+  socket.on("checkPeers", (roomId) => {
+  const room = io.sockets.adapter.rooms.get(roomId);
+  const numClients = room ? room.size : 0;
+
+  if (numClients > 1) {
+    socket.emit("user-joined"); // force trigger for second user
+  }
+});
 })
 
 
